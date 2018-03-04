@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="mob.app.dev.template" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Week * - TEMPLATE</name>
+    <description>
+        A sample application that ...
+    </description>
+    <author email="c.blythe@worc.ac.uk" href="worcester.ac.uk">
+        WBS Computing
+    </author>
+    <access origin="*" />
+    <preference name="permissions" value="none" />
+</widget>
