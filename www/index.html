@@ -5,7 +5,7 @@
 
     <title>S18 Weather App</title>
 
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <!-- Mobile screen size control   -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see Phonegap Developer built app. Added "; img-src 'self' data:" to fix JQM loading error-->
@@ -14,10 +14,10 @@
     <link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
     <script src="jquery-mobile/jquery-1.8.3.min.js"></script>
     <script src="jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-<!--    <script src="cordova.js"></script>-->
+    <!--    <script src="cordova.js"></script>-->
     <script src='js/Ractive.js'></script>
     <script src="js/index.js"></script>
-    
+
 </head>
 
 <body>
@@ -29,27 +29,33 @@
         </div>
 
         <div data-role="main" class="ui-content">
-            
-<!--            test image-->
-            <img src="https://www.metaweather.com/static/img/weather/s.svg" height="42" width="42"> 
-            
+
+            <!-- Labels for location and date -->
+            <label id="labelLocation">Processing...</label>
+            <label id="labelDate"></label>
+
+            <!-- test image (not working) -->
+            <img src="https://www.metaweather.com/static/img/weather/s.svg" height="42" width="42">
+
             <!-- RACTIVE binding location - where to display data - a ListView -->
-    		<ul data-role="listview" id='container'></ul>
-            
+            <ul data-role="listview" id='container'></ul>
+
+
         </div>
 
         <div data-role="footer" data-position="fixed">
             <h1>Footer Text</h1>
         </div>
     </div>
-    
-     
+
+
     <!--Ractive template - how to display data-->
     <script id='myTemplate' type='text/ractive'>
-	
-			{{#weather}}
-			<li> <p>{{weather_state_abbr}}</p>  {{weather_state_name}}</li>
-			{{/weather}}
+
+        {{#weather}}
+        <li>
+            {{weather_state_abbr}} : {{weather_state_name}}</li>
+        {{/weather}}
 
     </script>
 
