@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
-    <title>Application TEMPLATE</title>
+    <title>S18 Weather App</title>
 
 
     <!-- Mobile screen size control   -->
@@ -14,7 +14,8 @@
     <link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
     <script src="jquery-mobile/jquery-1.8.3.min.js"></script>
     <script src="jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-    <script src="cordova.js"></script>
+<!--    <script src="cordova.js"></script>-->
+    <script src='js/Ractive.js'></script>
     <script src="js/index.js"></script>
     
 </head>
@@ -24,23 +25,30 @@
     <!-- Example JQuery Mobile page structure (with fixed header/footer)   -->
     <div data-role="page" id="pageone" data-position="fixed">
         <div data-role="header">
-            <h1>Page 1</h1>
+            <h1>My Feed</h1>
         </div>
 
         <div data-role="main" class="ui-content">
-            <p>Welcome! Demo linked text / button and nav link...</p>
-            <!-- Example link text to js file   -->
-            <div id="linkedText">Placeholder</div><br>
-            <!-- Example button -->
-            <button id="linkedButton">Click me!</button>
-            <!-- Example link to another page (not present in template)   -->
-            <a href="#pagetwo">Go to Page Two</a>
+            
+            <!-- RACTIVE binding location - where to display data - a ListView -->
+    		<ul data-role="listview" id='container'></ul>
+            
         </div>
 
         <div data-role="footer" data-position="fixed">
             <h1>Footer Text</h1>
         </div>
     </div>
+    
+     
+    <!--Ractive template - how to display data-->
+    <script id='myTemplate' type='text/ractive'>
+	
+			{{#weather}}
+			<li> <img src="https://www.metaweather.com/static/img/weather/{{weather_state_abbr}}.svg" height="42" width="42">  {{weather_state_name}}</li>
+			{{/weather}}
+
+    </script>
 
 </body>
 
