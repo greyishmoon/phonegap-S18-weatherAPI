@@ -31,12 +31,19 @@
         <div data-role="main" class="ui-content">
 
             <!-- Labels for location and date -->
-            <label id="labelLocation">Processing...</label>
-            <label id="labelDate"></label>
+            <p id="labelLocation">Processing...</p>
+            <p id="labelDate"></p>
 
             <!-- test image (not working) -->
-            <img src="https://www.metaweather.com/static/img/weather/s.svg" height="42" width="42">
+            <!-- <img src="https://www.metaweather.com/static/img/weather/s.svg" height="42" width="42"> -->
 
+            <!-- <ul data-role="listview">
+                <li>Acura</li>
+                <li>Audi</li>
+                <li>BMW</li>
+                <li>Cadillac</li>
+                <li>Ferrari</li>
+            </ul> -->
             <!-- RACTIVE binding location - where to display data - a ListView -->
             <ul data-role="listview" id='container'></ul>
 
@@ -53,8 +60,8 @@
     <script id='myTemplate' type='text/ractive'>
 
         {{#weather}}
-        <li>
-            {{weather_state_abbr}} : {{weather_state_name}}</li>
+        <li> <img src="https://www.metaweather.com/static/img/weather/{{weather_state_abbr}}.svg" height="42" width="42">  {{weather_state_name}}</li>
+
         {{/weather}}
 
     </script>
@@ -63,5 +70,5 @@
 
 </html>
 
-<!--  <li> <img src="https://www.metaweather.com/static/img/weather/{{weather_state_abbr}}.svg" height="42" width="42">  {{weather_state_name}}</li>  -->
+ <!-- <li> <img src="https://www.metaweather.com/static/img/weather/{{weather_state_abbr}}.svg" height="42" width="42">  {{weather_state_name}}</li>  -->
 <!--  https://www.metaweather.com/static/img/weather/s.svg  -->
